@@ -1,1 +1,20 @@
-<p>form-ordenes works!</p>
+<div style="padding: 20px; max-width: 400px; margin: auto; border: 1px solid #ccc; border-radius: 8px;">
+  <h2>{{ titulo }}</h2>
+  
+  <label>Nombre del Envío:</label>
+  <input type="text" [(ngModel)]="orden.ShipName" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+
+  <label>Vía de Envío (1, 2, 3):</label>
+  <input type="number" [(ngModel)]="orden.ShipVia" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+
+  <label>Costo del Flete ($):</label>
+  <input type="number" [(ngModel)]="orden.Freight" style="width: 100%; padding: 8px; margin-bottom: 20px;">
+
+  <button (click)="guardar()" style="background: blue; color: white; padding: 10px; border: none; width: 100%; cursor: pointer;">
+    Guardar
+  </button>
+  
+  <button routerLink="/ordenes" style="background: gray; color: white; padding: 10px; border: none; width: 100%; margin-top: 5px; cursor: pointer;">
+    Cancelar
+  </button>
+</div>
