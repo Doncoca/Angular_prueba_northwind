@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router'; // <--- ESTA ES LA CLAVE
 import { OrdenService } from '../services/orden.service';
 import { Order } from '../Models/orders';
-
+// ...
 @Component({
   selector: 'app-form-ordenes',
   templateUrl: './form-ordenes.html',
-  imports: [CommonModule, FormsModule, RouterModule], 
+  imports: [CommonModule, FormsModule], 
   styleUrls: ['./form-ordenes.css']    
 })
 export class FormOrdenComponent implements OnInit {

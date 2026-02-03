@@ -10,7 +10,7 @@ import { Orden } from './orden';
 export class OrdenService {
   
   // 🔴 ¡VERIFICA TU PUERTO AQUÍ!
-  private apiUrl = 'https://localhost:7153/api/Orders'; 
+  private apiUrl = 'https://localhost:7099/Orders'; 
 
   constructor(private http: HttpClient) { }
 
