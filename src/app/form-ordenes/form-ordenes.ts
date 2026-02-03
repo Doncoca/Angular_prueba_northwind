@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router'; // <--- ESTA ES LA CLAVE
 import { OrdenService } from '../services/orden.service';
-import { Order } from '../Models/orders';
+import { Orden } from '../Models/orders';
 // ...
 @Component({
   selector: 'app-form-ordenes',
@@ -15,7 +15,7 @@ export class FormOrdenComponent implements OnInit {
 
   titulo = "Nueva Orden";
   // Modelo inicial
-  orden: Order = { OrderID: 0, ShipName: '', ShipVia: 1, Freight: 0 };
+  orden: Orden = { orderID: 0, shipName: '', shipVia: 1, freight: 0 };
 
   constructor(
     private servicio: OrdenService,
@@ -37,7 +37,7 @@ export class FormOrdenComponent implements OnInit {
   }
 
   guardar() {
-    if (this.orden.OrderID > 0) {
+    if (this.orden.orderID > 0) {
       // Editar
       this.servicio.update(this.orden).subscribe(() => {
         alert("¡Actualizado!");

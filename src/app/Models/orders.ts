@@ -1,8 +1,8 @@
-export interface Order {
-  OrderID: number;
-  ShipName: string;
-  ShipVia: number;
-  Freight:number;
+export interface Orden {
+  orderID: number;
+  shipName: string;
+  shipVia: number;
+  freight:number;
  
 }
 

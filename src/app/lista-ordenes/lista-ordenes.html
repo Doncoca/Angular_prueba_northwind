@@ -1,12 +1,12 @@
 <div style="padding: 20px;">
-  <h2>📦 Listado de Órdenes</h2>
+  <h2>📦 Listado de Órdenes ({{ listaCompleta.length }} registros)</h2>
   
   <button routerLink="/crear" style="background: green; color: white; padding: 10px; margin-bottom: 15px; border: none; cursor: pointer;">
     + Nueva Orden
   </button>
 
-  <table border="1" style="width: 100%; border-collapse: collapse;">
-    <thead style="background: #eee;">
+  <table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+    <thead style="background: #2c3e50; color: white;">
       <tr>
         <th>ID</th>
         <th>Nombre Envío</th>
@@ -16,20 +16,34 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of lista">
-        <td>{{ item.OrderID }}</td>
-        <td>{{ item.ShipName }}</td>
-        <td>{{ item.ShipVia }}</td>
-        <td>{{ item.Freight | currency }}</td>
+      <tr *ngFor="let item of listaVisible">
+        <td>{{ item.orderID }}</td>
+        <td>{{ item.shipName }}</td>
+        <td>{{ item.shipVia }}</td>
+        <td>{{ item.freight | currency }}</td>
         <td style="text-align: center;">
-          <button [routerLink]="['/editar', item.OrderID]" style="margin-right: 5px; cursor: pointer;">
-            ✏️
-          </button>
-          <button (click)="eliminar(item.OrderID)" style="background: red; color: white; border: none; cursor: pointer;">
-            🗑️
-          </button>
+          <button [routerLink]="['/editar', item.orderID]" style="margin-right: 5px;">✏️</button>
+          <button (click)="eliminar(item.orderID)">🗑️</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; background: #eee; padding: 10px; border-radius: 5px;">
+    
+    <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 1" 
+            style="padding: 8px 15px; cursor: pointer; background: #34495e; color: white; border: none;">
+      ⬅️ Anterior
+    </button>
+
+    <span style="font-weight: bold;">
+      Página {{ paginaActual }} de {{ totalPaginas }}
+    </span>
+
+    <button (click)="cambiarPagina(1)" [disabled]="paginaActual === totalPaginas" 
+            style="padding: 8px 15px; cursor: pointer; background: #34495e; color: white; border: none;">
+      Siguiente ➡️
+    </button>
+  </div>
+
 </div>

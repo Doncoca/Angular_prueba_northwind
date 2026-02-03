@@ -2,13 +2,13 @@
   <h2>{{ titulo }}</h2>
   
   <label>Nombre del Envío:</label>
-  <input type="text" [(ngModel)]="orden.ShipName" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  <input type="text" [(ngModel)]="orden.shipName" style="width: 100%; padding: 8px; margin-bottom: 10px;">
 
   <label>Vía de Envío (1, 2, 3):</label>
-  <input type="number" [(ngModel)]="orden.ShipVia" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+  <input type="number" [(ngModel)]="orden.shipVia" style="width: 100%; padding: 8px; margin-bottom: 10px;">
 
   <label>Costo del Flete ($):</label>
-  <input type="number" [(ngModel)]="orden.Freight" style="width: 100%; padding: 8px; margin-bottom: 20px;">
+  <input type="number" [(ngModel)]="orden.freight" style="width: 100%; padding: 8px; margin-bottom: 20px;">
 
   <button (click)="guardar()" style="background: blue; color: white; padding: 10px; border: none; width: 100%; cursor: pointer;">
     Guardar
