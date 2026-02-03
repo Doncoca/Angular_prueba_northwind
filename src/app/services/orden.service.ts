@@ -10,8 +10,7 @@ import { Orden } from './orden';
 export class OrdenService {
   
   // 🔴 ¡VERIFICA TU PUERTO AQUÍ!
-  private apiUrl = 'https://localhost:7153/api/Empleados'; 
-  // Nota: Si tu controller se llama OrdenesController, pon /api/Ordenes
+  private apiUrl = 'https://localhost:7153/api/Orders'; 
 
   constructor(private http: HttpClient) { }
 
