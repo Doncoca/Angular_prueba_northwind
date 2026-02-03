@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
+import { RouterModule } from '@angular/router';
 import { OrdenService } from '../services/orden.service';
 import { Order } from '../Models/orders';
 
 @Component({
-  selector: 'app-form-orden',
-  templateUrl: './form-orden.component.html'
+  selector: 'app-form-ordenes',
+  templateUrl: './form-ordenes.html',
+  imports: [CommonModule, FormsModule, RouterModule], 
+  styleUrls: ['./form-ordenes.css']    
 })
 export class FormOrdenComponent implements OnInit {
 
   titulo = "Nueva Orden";
   // Modelo inicial
-  orden: Order = { OrderID: 0, ShipName: '', ShipVia: 1, Freigth: 0 };
+  orden: Order = { OrderID: 0, ShipName: '', ShipVia: 1, Freight: 0 };
 
   constructor(
     private servicio: OrdenService,

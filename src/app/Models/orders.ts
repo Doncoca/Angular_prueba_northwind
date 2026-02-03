@@ -2,7 +2,7 @@ export interface Order {
   OrderID: number;
   ShipName: string;
   ShipVia: number;
-  Freigth:number;
+  Freight:number;
  
 }
 

@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common'; 
+import { RouterModule } from '@angular/router'; 
 import { OrdenService } from '../services/orden.service';
-import { Order } from '../Models/orders';
+import { Order } from '../Models/orders'; // <--- Probablemente sea esta ruta// ... tus otros imports
 
 @Component({
   selector: 'app-lista-ordenes',
-  templateUrl: './lista-ordenes.component.html'
+  standalone: true,  
+  imports: [CommonModule, RouterModule], 
+  templateUrl: './lista-ordenes.html',
+  styleUrls: ['./lista-ordenes.css']
 })
 export class ListaOrdenesComponent implements OnInit {
 
