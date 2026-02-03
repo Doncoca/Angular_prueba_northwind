@@ -1,1 +1,35 @@
-<p>lista-ordenes works!</p>
+<div style="padding: 20px;">
+  <h2>📦 Listado de Órdenes</h2>
+  
+  <button routerLink="/crear" style="background: green; color: white; padding: 10px; margin-bottom: 15px; border: none; cursor: pointer;">
+    + Nueva Orden
+  </button>
+
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead style="background: #eee;">
+      <tr>
+        <th>ID</th>
+        <th>Nombre Envío</th>
+        <th>Vía</th>
+        <th>Flete</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lista">
+        <td>{{ item.OrderID }}</td>
+        <td>{{ item.ShipName }}</td>
+        <td>{{ item.ShipVia }}</td>
+        <td>{{ item.Freight | currency }}</td>
+        <td style="text-align: center;">
+          <button [routerLink]="['/editar', item.OrderID]" style="margin-right: 5px; cursor: pointer;">
+            ✏️
+          </button>
+          <button (click)="eliminar(item.OrderID)" style="background: red; color: white; border: none; cursor: pointer;">
+            🗑️
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
